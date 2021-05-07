@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="InfoTools.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AD_Domain" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">51.75.214.56</Value>
+    </Setting>
+    <Setting Name="AD_Container" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DC=MYCREATIVE,DC=local</Value>
+    </Setting>
+    <Setting Name="AD_Admin" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MYCREATIVE\gplapp</Value>
+    </Setting>
+    <Setting Name="AD_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Passw@rd</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

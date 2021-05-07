@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="InfoTools.AccueilForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InfoTools"
+             mc:Ignorable="d" 
+             d:DesignHeight="542" d:DesignWidth="1002">
+    <Grid>
+        <Label Content="Application" HorizontalAlignment="Left" Margin="81,145,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Height="88"/>
+        <Label Content="CRM Lourde" HorizontalAlignment="Left" Margin="81,193,0,0" VerticalAlignment="Top" FontSize="24" FontStyle="Italic"/>
+        <Label Content="La société Info-Tools développe et vend différents logiciels.&#xA;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#xD;&#xA;Morbi consequat molestie massa, quis aliquam nisi aliquam&#xD;&#xA;nec. Morbi libero risus, consectetur tristique mi a, maximus&#xD;&#xA;eleifend massa. Rem architecto atque ea galisum tempore&#xD;&#xA;est amet nisi et magni eaque qui nostrum laborum cum&#xD;&#xA;quod tempora." HorizontalAlignment="Left" Margin="81,238,0,0" VerticalAlignment="Top" Width="383" Height="161" FontSize="14"/>
+        <Label x:Name="LblBienvenue" HorizontalAlignment="Left" Margin="804,10,0,0" VerticalAlignment="Top" FontSize="10"/>
+        <Image Source="Images/index.png" Margin="447,145,0,86" />
+
+    </Grid>
+</UserControl>
