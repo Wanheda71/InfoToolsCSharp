@@ -24,6 +24,12 @@ namespace InfoTools
         public MainWindow()
         {
             InitializeComponent();
+            if (Global.UtilisateurActuel.NumRole == 1)
+            {
+                BtnProduit.Visibility = Visibility.Hidden;
+                BtnGraphique.Visibility = Visibility.Hidden;
+            }
+
         }
 
         private void BtnPopUpClose_Click(object sender, RoutedEventArgs e)
@@ -81,6 +87,7 @@ namespace InfoTools
             UCUtilisateur.Visibility = Visibility.Visible;
             UCRendezVous.Visibility = Visibility.Hidden;
             UCGraphique.Visibility = Visibility.Hidden;
+            
         }
 
         private void BtnProduit_Selected(object sender, RoutedEventArgs e)
@@ -90,6 +97,7 @@ namespace InfoTools
             UCUtilisateur.Visibility = Visibility.Hidden;
             UCRendezVous.Visibility = Visibility.Hidden;
             UCGraphique.Visibility = Visibility.Hidden;
+           
         }
 
         private void BtnRendezVous_Selected(object sender, RoutedEventArgs e)
