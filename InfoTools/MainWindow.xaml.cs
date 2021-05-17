@@ -109,6 +109,7 @@ namespace InfoTools
             UCRendezVous.Visibility = Visibility.Hidden;
             UCGraphique.Visibility = Visibility.Visible;
 
+            System.Diagnostics.Process.Start("http://localhost/Graphique/Graphique_PPE/");
         }
     }
 }

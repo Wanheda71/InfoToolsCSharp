@@ -112,7 +112,7 @@
                     <ListViewItem x:Name="BtnGraphique" Height="60" Selected="BtnGraphique_Selected">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ChartBar" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Github" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Statistiques" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
 
