@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\UwAmp\www\Graphique\InfoToolsCSharp-master\InfoToolsCSharp\InfoTools\obj\Debug\
+C:\UwAmp\www\Graphique\InfoToolsCSharp-master\InfoToolsCSharp\InfoTools\obj\Release\
 InfoTools
 none
 false
-DEBUG;TRACE
+TRACE
 C:\UwAmp\www\Graphique\InfoToolsCSharp-master\InfoToolsCSharp\InfoTools\App.xaml
 7-1570658177
 
@@ -16,5 +16,5 @@ C:\UwAmp\www\Graphique\InfoToolsCSharp-master\InfoToolsCSharp\InfoTools\App.xaml
 144-2032646101
 AccueilForm.xaml;Formulaire\ConnexionForm.xaml;GraphiqueForm.xaml;MainWindow.xaml;ProduitForm.xaml;RendezVousForm.xaml;UtilisateursForm.xaml;
 
-False
+True
 

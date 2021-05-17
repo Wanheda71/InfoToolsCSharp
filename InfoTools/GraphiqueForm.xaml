@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignWidth="1002" Height="542">
     <Grid>
-        
-        <WebBrowser HorizontalAlignment="Left" Height="542" VerticalAlignment="Top" Width="1006" RenderTransformOrigin="0.5,0.5" Source="http://twitter.fr/" Margin="0,0,-4,0"/>
+
+        <WebBrowser HorizontalAlignment="Left" Height="542" VerticalAlignment="Top" Width="1006" RenderTransformOrigin="0.5,0.5" Source="http://localhost/Graphique/Graphique_PPE/" Margin="0,0,-4,0"/>
 
     </Grid>
     
