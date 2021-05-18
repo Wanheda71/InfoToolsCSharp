@@ -50,6 +50,7 @@ namespace InfoTools
                         CboUtilisateur.SelectedItem = item;
                     }
                 }
+
                 TxtNom.Text = Convert.ToString(RdvSelected.Nom);
                 TxtPrenom.Text = Convert.ToString(RdvSelected.Prenom);
                 TxtMail.Text = Convert.ToString(RdvSelected.Mail);

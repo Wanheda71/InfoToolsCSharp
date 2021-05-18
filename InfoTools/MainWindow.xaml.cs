@@ -87,7 +87,6 @@ namespace InfoTools
             UCUtilisateur.Visibility = Visibility.Visible;
             UCRendezVous.Visibility = Visibility.Hidden;
             UCGraphique.Visibility = Visibility.Hidden;
-            
         }
 
         private void BtnProduit_Selected(object sender, RoutedEventArgs e)

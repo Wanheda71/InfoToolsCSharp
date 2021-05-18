@@ -95,17 +95,17 @@
                         </StackPanel>
                     </ListViewItem>
 
-                    <ListViewItem x:Name="BtnProduit" Height="60" Selected="BtnProduit_Selected">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Cart" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Produits" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-
                     <ListViewItem x:Name="BtnRendezVous" Height="60" Selected="BtnRendezVous_Selected">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ClipboardClock" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Rendez-Vous" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem x:Name="BtnProduit" Height="60" Selected="BtnProduit_Selected">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Cart" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Produits" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
 

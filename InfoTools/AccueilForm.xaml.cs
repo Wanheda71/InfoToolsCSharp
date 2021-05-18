@@ -23,7 +23,7 @@ namespace InfoTools
         public AccueilForm()
         {
             InitializeComponent();
-            LblBienvenue.Content = string.Format("Bienvenue {0} {1} sur InfoTools CRM", Global.UtilisateurActuel.Nom, Global.UtilisateurActuel.Prenom);
+            LblBienvenue.Content = string.Format("Bienvenue sur InfoTools CRM {0} {1}", Global.UtilisateurActuel.Nom, Global.UtilisateurActuel.Prenom);
         }
     }
 }

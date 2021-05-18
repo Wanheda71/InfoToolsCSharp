@@ -17,16 +17,6 @@
                   VerticalAlignment="Top" HorizontalAlignment="Left"
                   Margin="10,15,0,0"
                   IsReadOnly="True" SelectionChanged="DtgRDV_SelectionChanged" Grid.RowSpan="2">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID Rendez-Vous" Binding="{Binding IdRDV}"/>
-                <DataGridTextColumn Header="ID Utilisateur" Binding="{Binding IdUti}"/>
-                <DataGridTextColumn Header="Nom" Binding="{Binding Nom}"/>
-                <DataGridTextColumn Header="Prénom" Binding="{Binding Prenom}"/>
-                <DataGridTextColumn Header="Mail" Binding="{Binding Mail}"/>
-                <DataGridTextColumn Header="Téléphone" Binding="{Binding Tel}"/>
-                <DataGridTextColumn Header="Contenu" Binding="{Binding Contenu}"/>
-                <DataGridTextColumn Header="Date" Binding="{Binding DteRDV, StringFormat=\{0:dd/MM/yy HH:mm:ss\}}"/>
-            </DataGrid.Columns>
         </DataGrid>
 
         <ComboBox x:Name="CboUtilisateur"

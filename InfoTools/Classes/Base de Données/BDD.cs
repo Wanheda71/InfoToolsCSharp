@@ -33,6 +33,7 @@ namespace InfoTools
         public static async Task<List<Utilisateur>> SelectUtilisateur()
         {
             string query = "select * from utilisateur";
+
             List<Utilisateur> dbUtilisateur = new List<Utilisateur>();
             MySqlConnection sqlConnection = dbInit();
 
@@ -400,6 +401,8 @@ namespace InfoTools
         public static async Task<List<RendezVous>> SelectRdv()
         {
             string query = "select * from rdv";
+            string queryCommercial = string.Format("SELECT * FROM rdv INNER JOIN utilisateur ON rdv.IdUti = utilisateur.IdUti WHERE NumRole = 1 AND utilisateur.IdUti = {0}", Global.UtilisateurActuel.IdUti);
+
             List<RendezVous> dbRdv = new List<RendezVous>();
             MySqlConnection sqlConnection = dbInit();
 
@@ -408,7 +411,15 @@ namespace InfoTools
                 // Ouverture de la connexion
                 await sqlConnection.OpenAsync();
 
-                MySqlCommand sqlCommand = new MySqlCommand(query, sqlConnection);
+                MySqlCommand sqlCommand;
+
+                if (Global.UtilisateurActuel.NumRole == 1){
+                    sqlCommand = new MySqlCommand(queryCommercial, sqlConnection);
+                } else
+                {
+                    sqlCommand = new MySqlCommand(query, sqlConnection);
+                }
+
                 DbDataReader dataReader = await sqlCommand.ExecuteReaderAsync();
 
                 while (await dataReader.ReadAsync())
