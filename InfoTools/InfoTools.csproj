@@ -157,6 +157,9 @@
     <Compile Include="GraphiqueForm.xaml.cs">
       <DependentUpon>GraphiqueForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProspectForm.xaml.cs">
+      <DependentUpon>ProspectForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RendezVousForm.xaml.cs">
       <DependentUpon>RendezVousForm.xaml</DependentUpon>
     </Compile>
@@ -197,6 +200,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ProduitForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProspectForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

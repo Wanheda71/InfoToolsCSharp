@@ -78,15 +78,28 @@ namespace InfoTools
             UCUtilisateur.Visibility = Visibility.Hidden;
             UCRendezVous.Visibility = Visibility.Hidden;
             UCGraphique.Visibility = Visibility.Hidden;
+            UCProspects.Visibility = Visibility.Hidden;
         }
 
         private void BtnUtilisateur_Selected(object sender, RoutedEventArgs e)
         {
-            UCAccueil.Visibility = Visibility.Hidden;
-            UCProduit.Visibility = Visibility.Hidden;
-            UCUtilisateur.Visibility = Visibility.Visible;
-            UCRendezVous.Visibility = Visibility.Hidden;
-            UCGraphique.Visibility = Visibility.Hidden;
+            if (Global.UtilisateurActuel.NumRole == 1)
+            {
+                UCAccueil.Visibility = Visibility.Hidden;
+                UCProduit.Visibility = Visibility.Hidden;
+                UCUtilisateur.Visibility = Visibility.Hidden;
+                UCRendezVous.Visibility = Visibility.Hidden;
+                UCGraphique.Visibility = Visibility.Hidden;
+                UCProspects.Visibility = Visibility.Visible;
+            } else
+            {
+                UCAccueil.Visibility = Visibility.Hidden;
+                UCProduit.Visibility = Visibility.Hidden;
+                UCUtilisateur.Visibility = Visibility.Visible;
+                UCRendezVous.Visibility = Visibility.Hidden;
+                UCGraphique.Visibility = Visibility.Hidden;
+            }
+            
         }
 
         private void BtnProduit_Selected(object sender, RoutedEventArgs e)
@@ -96,7 +109,8 @@ namespace InfoTools
             UCUtilisateur.Visibility = Visibility.Hidden;
             UCRendezVous.Visibility = Visibility.Hidden;
             UCGraphique.Visibility = Visibility.Hidden;
-           
+            UCProspects.Visibility = Visibility.Hidden;
+
         }
 
         private void BtnRendezVous_Selected(object sender, RoutedEventArgs e)
@@ -106,6 +120,7 @@ namespace InfoTools
             UCUtilisateur.Visibility = Visibility.Hidden;
             UCRendezVous.Visibility = Visibility.Visible;
             UCGraphique.Visibility = Visibility.Hidden;
+            UCProspects.Visibility = Visibility.Hidden;
         }
 
         private void BtnGraphique_Selected(object sender, RoutedEventArgs e)
@@ -115,6 +130,7 @@ namespace InfoTools
             UCUtilisateur.Visibility = Visibility.Hidden;
             UCRendezVous.Visibility = Visibility.Hidden;
             UCGraphique.Visibility = Visibility.Visible;
+            UCProspects.Visibility = Visibility.Hidden;
 
             System.Diagnostics.Process.Start("http://localhost/Graphique/Graphique_PPE/");
         }

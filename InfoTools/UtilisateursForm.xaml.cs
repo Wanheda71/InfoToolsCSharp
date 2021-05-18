@@ -28,30 +28,9 @@ namespace InfoTools
 
         private async void dbInit()
         {
-            List<Prospect> cProspect = await BDD.SelectProspect();
-            List<Utilisateur> cUtilisateur = await BDD.SelectUtilisateur();
 
-            if (Global.UtilisateurActuel.NumRole == 1)
-            {
-                BtnAjouter.Visibility = Visibility.Hidden;
-                BtnModifier.Visibility = Visibility.Hidden;
-                BtnSupprimer.Visibility = Visibility.Hidden;
-                TxtNom.Visibility = Visibility.Hidden;
-                TxtPrenom.Visibility = Visibility.Hidden;
-                TxtMdp.Visibility = Visibility.Hidden;
-                TxtMail.Visibility = Visibility.Hidden;
-                TxtTel.Visibility = Visibility.Hidden;
-                TxtAdresse.Visibility = Visibility.Hidden;
-                TxtCP.Visibility = Visibility.Hidden;
-                TxtVille.Visibility = Visibility.Hidden;
-                TxtPseudo.Visibility = Visibility.Hidden;
-                CboNumRole.Visibility = Visibility.Hidden;
-                DtgUtilisateur.Width = 888;
-                DtgUtilisateur.ItemsSource = cProspect;
-            } else
-            {
-                DtgUtilisateur.ItemsSource = cUtilisateur;
-            }
+            List<Utilisateur> cUtilisateur = await BDD.SelectUtilisateur();
+            DtgUtilisateur.ItemsSource = cUtilisateur;
 
             List<Role> cRole = await BDD.SelectRole();
             CboNumRole.ItemsSource = cRole;

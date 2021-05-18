@@ -227,7 +227,7 @@ namespace InfoTools
         public static async Task<List<Prospect>> SelectProspect()
         {
             string query = "select * from prospect";
-            string queryCommercial = string.Format("select * from prospect inner join rdv on prospect.IdRdv = rdv.IdRdv inner join rdv_commercial on rdv.IdRDV = rdv_commercial.IdRdv where IdUti = {0}", Global.UtilisateurActuel.IdUti);
+            string queryCommercial = string.Format("select * from prospects inner join rdv on prospects.IdRdv = rdv.IdRdv inner join rdv_commercial on rdv.IdRDV = rdv_commercial.IdRdv where rdv_commercial.IdUti = {0}", Global.UtilisateurActuel.IdUti);
 
             List<Prospect> dbProspect = new List<Prospect>();
             MySqlConnection sqlConnection = dbInit();
