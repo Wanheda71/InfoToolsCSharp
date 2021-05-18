@@ -28,6 +28,7 @@ namespace InfoTools
             {
                 BtnProduit.Visibility = Visibility.Hidden;
                 BtnGraphique.Visibility = Visibility.Hidden;
+                BtnFacturation.Visibility = Visibility.Hidden;
             }
 
         }
@@ -52,13 +53,6 @@ namespace InfoTools
             BtnCloseMenu.Visibility = Visibility.Collapsed;
         }
 
-        private void BtnConnexion_Click(object sender, RoutedEventArgs e)
-        {
-            ConnexionForm FormulaireConnexion = new ConnexionForm();
-            FormulaireConnexion.Show();
-            this.Hide();
-        }
-
         private void DragMe(object sender, MouseButtonEventArgs e)
         {
             try
@@ -77,29 +71,19 @@ namespace InfoTools
             UCProduit.Visibility = Visibility.Hidden;
             UCUtilisateur.Visibility = Visibility.Hidden;
             UCRendezVous.Visibility = Visibility.Hidden;
+            UCFacturation.Visibility = Visibility.Hidden;
             UCGraphique.Visibility = Visibility.Hidden;
-            UCProspects.Visibility = Visibility.Hidden;
         }
 
         private void BtnUtilisateur_Selected(object sender, RoutedEventArgs e)
         {
-            if (Global.UtilisateurActuel.NumRole == 1)
-            {
-                UCAccueil.Visibility = Visibility.Hidden;
-                UCProduit.Visibility = Visibility.Hidden;
-                UCUtilisateur.Visibility = Visibility.Hidden;
-                UCRendezVous.Visibility = Visibility.Hidden;
-                UCGraphique.Visibility = Visibility.Hidden;
-                UCProspects.Visibility = Visibility.Visible;
-            } else
-            {
-                UCAccueil.Visibility = Visibility.Hidden;
-                UCProduit.Visibility = Visibility.Hidden;
-                UCUtilisateur.Visibility = Visibility.Visible;
-                UCRendezVous.Visibility = Visibility.Hidden;
-                UCGraphique.Visibility = Visibility.Hidden;
-            }
-            
+            UCAccueil.Visibility = Visibility.Hidden;
+            UCProduit.Visibility = Visibility.Hidden;
+            UCUtilisateur.Visibility = Visibility.Visible;
+            UCRendezVous.Visibility = Visibility.Hidden;
+            UCFacturation.Visibility = Visibility.Hidden;
+            UCGraphique.Visibility = Visibility.Hidden;
+
         }
 
         private void BtnProduit_Selected(object sender, RoutedEventArgs e)
@@ -108,8 +92,8 @@ namespace InfoTools
             UCProduit.Visibility = Visibility.Visible;
             UCUtilisateur.Visibility = Visibility.Hidden;
             UCRendezVous.Visibility = Visibility.Hidden;
+            UCFacturation.Visibility = Visibility.Hidden;
             UCGraphique.Visibility = Visibility.Hidden;
-            UCProspects.Visibility = Visibility.Hidden;
 
         }
 
@@ -119,8 +103,18 @@ namespace InfoTools
             UCProduit.Visibility = Visibility.Hidden;
             UCUtilisateur.Visibility = Visibility.Hidden;
             UCRendezVous.Visibility = Visibility.Visible;
+            UCFacturation.Visibility = Visibility.Hidden;
             UCGraphique.Visibility = Visibility.Hidden;
-            UCProspects.Visibility = Visibility.Hidden;
+        }
+
+        private void BtnFacturation_Selected(object sender, RoutedEventArgs e)
+        {
+            UCAccueil.Visibility = Visibility.Hidden;
+            UCProduit.Visibility = Visibility.Hidden;
+            UCUtilisateur.Visibility = Visibility.Hidden;
+            UCRendezVous.Visibility = Visibility.Hidden;
+            UCFacturation.Visibility = Visibility.Visible;
+            UCGraphique.Visibility = Visibility.Hidden;
         }
 
         private void BtnGraphique_Selected(object sender, RoutedEventArgs e)
@@ -129,10 +123,12 @@ namespace InfoTools
             UCProduit.Visibility = Visibility.Hidden;
             UCUtilisateur.Visibility = Visibility.Hidden;
             UCRendezVous.Visibility = Visibility.Hidden;
+            UCFacturation.Visibility = Visibility.Hidden;
             UCGraphique.Visibility = Visibility.Visible;
-            UCProspects.Visibility = Visibility.Hidden;
 
             System.Diagnostics.Process.Start("http://localhost/Graphique/Graphique_PPE/");
         }
+
+
     }
 }

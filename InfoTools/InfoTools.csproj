@@ -149,8 +149,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Facturation.cs" />
     <Compile Include="Classes\Global.cs" />
     <Compile Include="Classes\Prospect.cs" />
+    <Compile Include="FacturationForm.xaml.cs">
+      <DependentUpon>FacturationForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Formulaire\ConnexionForm.xaml.cs">
       <DependentUpon>ConnexionForm.xaml</DependentUpon>
     </Compile>
@@ -167,6 +171,10 @@
       <DependentUpon>UtilisateursForm.xaml</DependentUpon>
     </Compile>
     <Page Include="AccueilForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FacturationForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

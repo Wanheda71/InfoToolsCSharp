@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\UwAmp\www\Graphique\InfoToolsCSharp\InfoTools\App.xaml
-8602905620
+91612753046
 
-21221694270
+22-207938771
 1441122964542
-AccueilForm.xaml;Formulaire\ConnexionForm.xaml;GraphiqueForm.xaml;MainWindow.xaml;ProduitForm.xaml;ProspectForm.xaml;RendezVousForm.xaml;UtilisateursForm.xaml;
+AccueilForm.xaml;FacturationForm.xaml;Formulaire\ConnexionForm.xaml;GraphiqueForm.xaml;MainWindow.xaml;ProduitForm.xaml;ProspectForm.xaml;RendezVousForm.xaml;UtilisateursForm.xaml;
 
-True
+False
 

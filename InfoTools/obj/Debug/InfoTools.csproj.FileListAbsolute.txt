@@ -820,3 +820,7 @@ C:\Users\wagas\Source\Repos\InfoToolsCSharp2\InfoTools\obj\Debug\InfoTools.Prope
 C:\Users\wagas\Source\Repos\InfoToolsCSharp2\InfoTools\obj\Debug\InfoTools.csproj.GenerateResource.cache
 C:\Users\wagas\Source\Repos\InfoToolsCSharp2\InfoTools\obj\Debug\InfoTools.csproj.CoreCompileInputs.cache
 C:\Users\wagas\Source\Repos\InfoToolsCSharp2\InfoTools\obj\Debug\InfoTools.csproj.CopyComplete
+C:\UwAmp\www\Graphique\InfoToolsCSharp\InfoTools\obj\Debug\FacturationForm.g.cs
+C:\UwAmp\www\Graphique\InfoToolsCSharp\InfoTools\obj\Debug\ProspectForm.g.cs
+C:\UwAmp\www\Graphique\InfoToolsCSharp\InfoTools\obj\Debug\ProspectForm.baml
+C:\UwAmp\www\Graphique\InfoToolsCSharp\InfoTools\obj\Debug\FacturationForm.baml

@@ -649,5 +649,115 @@ namespace InfoTools
         }
         #endregion
 
+        #region Facturation
+        public static async Task<List<Facturation>> SelectFacturation()
+        {
+            string query = "select * from facturation";
+            List<Facturation> dbFact = new List<Facturation>();
+            MySqlConnection sqlConnection = dbInit();
+
+            try
+            {
+                // Ouverture de la connexion
+                await sqlConnection.OpenAsync();
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, sqlConnection);
+                DbDataReader dataReader = await sqlCommand.ExecuteReaderAsync();
+
+                while (await dataReader.ReadAsync())
+                {
+                    Facturation fact = new Facturation(Convert.ToInt32(dataReader["IdFact"]), Convert.ToInt32(dataReader["IdProd"]), Convert.ToInt32(dataReader["IdUti"]), Convert.ToInt32(dataReader["Quantite"]));
+                    dbFact.Add(fact);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                await sqlConnection.CloseAsync();
+                sqlConnection.Dispose();
+            }
+
+            return dbFact;
+        }
+
+        public static async void InsertFacturation(Facturation fact)
+        {
+            string query = string.Format("insert into facturation (IdFact, IdProd, IdUti, Quantite) values('{0}', '{1}', '{2}', '{3}')", fact.IdFact, fact.IdProd, fact.IdUti, fact.Quantite);
+            MySqlConnection sqlConnection = dbInit();
+
+            try
+            {
+                // Ouverture de la connexion
+                await sqlConnection.OpenAsync();
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, sqlConnection);
+
+                await sqlCommand.ExecuteNonQueryAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                await sqlConnection.CloseAsync();
+                sqlConnection.Dispose();
+            }
+        }
+
+        public static async void UpdateFacturation(Facturation fact)
+        {
+            string query = string.Format("update facturation set IdProd='{0}', IdUti='{1}', Quantite='{2}' where IdFact={3}", fact.IdProd, fact.IdUti, fact.Quantite, fact.IdFact);
+            MySqlConnection sqlConnection = dbInit();
+
+            try
+            {
+                // Ouverture de la connexion
+                await sqlConnection.OpenAsync();
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, sqlConnection);
+
+                await sqlCommand.ExecuteNonQueryAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                await sqlConnection.CloseAsync();
+                sqlConnection.Dispose();
+            }
+        }
+
+        public static async void DeleteFacturation(int id)
+        {
+            string query = string.Format("delete from facturation where IdFact={0}", id);
+            MySqlConnection sqlConnection = dbInit();
+
+            try
+            {
+                // Ouverture de la connexion
+                await sqlConnection.OpenAsync();
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, sqlConnection);
+
+                await sqlCommand.ExecuteNonQueryAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                await sqlConnection.CloseAsync();
+                sqlConnection.Dispose();
+            }
+        }
+        #endregion
+
     }
 }

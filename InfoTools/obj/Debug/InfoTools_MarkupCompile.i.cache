@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\wagas\Source\Repos\InfoToolsCSharp2\InfoTools\obj\Debug\
+C:\UwAmp\www\Graphique\InfoToolsCSharp\InfoTools\obj\Debug\
 InfoTools
 none
 false
 DEBUG;TRACE
-C:\Users\wagas\Source\Repos\InfoToolsCSharp2\InfoTools\App.xaml
-8602905620
+C:\UwAmp\www\Graphique\InfoToolsCSharp\InfoTools\App.xaml
+91612753046
 
-21221694270
-144-84455147
-AccueilForm.xaml;Formulaire\ConnexionForm.xaml;GraphiqueForm.xaml;MainWindow.xaml;ProduitForm.xaml;ProspectForm.xaml;RendezVousForm.xaml;UtilisateursForm.xaml;
+23-1050298138
+1441122964542
+AccueilForm.xaml;FacturationForm.xaml;Formulaire\ConnexionForm.xaml;GraphiqueForm.xaml;MainWindow.xaml;ProduitForm.xaml;ProspectForm.xaml;RendezVousForm.xaml;UtilisateursForm.xaml;
 
 True
 
