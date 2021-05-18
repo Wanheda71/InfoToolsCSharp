@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\wagas\Source\Repos\InfoToolsCSharp\InfoTools\obj\Debug\
+C:\UwAmp\www\Graphique\InfoToolsCSharp\InfoToolsCSharp\InfoTools\obj\Debug\
 InfoTools
 none
 false
 DEBUG;TRACE
-C:\Users\wagas\Source\Repos\InfoToolsCSharp\InfoTools\App.xaml
+C:\UwAmp\www\Graphique\InfoToolsCSharp\InfoToolsCSharp\InfoTools\App.xaml
 7-1570658177
 
 19-205682251
-144-956086509
+144-672329050
 AccueilForm.xaml;Formulaire\ConnexionForm.xaml;GraphiqueForm.xaml;MainWindow.xaml;ProduitForm.xaml;RendezVousForm.xaml;UtilisateursForm.xaml;
 
 False
