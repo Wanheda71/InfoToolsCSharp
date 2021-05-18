@@ -150,6 +150,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Global.cs" />
+    <Compile Include="Classes\Prospect.cs" />
     <Compile Include="Formulaire\ConnexionForm.xaml.cs">
       <DependentUpon>ConnexionForm.xaml</DependentUpon>
     </Compile>

@@ -33,6 +33,7 @@ namespace InfoTools
         public static async Task<List<Utilisateur>> SelectUtilisateur()
         {
             string query = "select * from utilisateur";
+            string queryCommercial = string.Format("select * from utilisateur where idUti = {0}", Global.UtilisateurActuel.IdUti);
 
             List<Utilisateur> dbUtilisateur = new List<Utilisateur>();
             MySqlConnection sqlConnection = dbInit();
@@ -42,7 +43,15 @@ namespace InfoTools
                 // Ouverture de la connexion
                 await sqlConnection.OpenAsync();
 
-                MySqlCommand sqlCommand = new MySqlCommand(query, sqlConnection);
+                MySqlCommand sqlCommand;
+
+                if (Global.UtilisateurActuel.NumRole == 1) {
+                sqlCommand = new MySqlCommand(queryCommercial, sqlConnection);
+                } 
+                else {
+                sqlCommand = new MySqlCommand(query, sqlConnection);
+                }
+
                 DbDataReader dataReader = await sqlCommand.ExecuteReaderAsync();
 
                 while (await dataReader.ReadAsync())
@@ -212,6 +221,129 @@ namespace InfoTools
             }
             Global.UtilisateurActuel = user;
         }
+        #endregion
+
+        #region Prospect
+        public static async Task<List<Prospect>> SelectProspect()
+        {
+            string query = "select * from prospect";
+            string queryCommercial = string.Format("select * from prospect inner join rdv on prospect.IdRdv = rdv.IdRdv inner join rdv_commercial on rdv.IdRDV = rdv_commercial.IdRdv where IdUti = {0}", Global.UtilisateurActuel.IdUti);
+
+            List<Prospect> dbProspect = new List<Prospect>();
+            MySqlConnection sqlConnection = dbInit();
+
+            try
+            {
+                // Ouverture de la connexion
+                await sqlConnection.OpenAsync();
+
+                MySqlCommand sqlCommand;
+
+                if (Global.UtilisateurActuel.NumRole == 1)
+                {
+                    sqlCommand = new MySqlCommand(queryCommercial, sqlConnection);
+                }
+                else
+                {
+                    sqlCommand = new MySqlCommand(query, sqlConnection);
+                }
+
+                DbDataReader dataReader = await sqlCommand.ExecuteReaderAsync();
+
+                while (await dataReader.ReadAsync())
+                {
+                    Prospect prospect = new Prospect(Convert.ToInt32(dataReader["IdProsp"]), Convert.ToInt32(dataReader["IdRDV"]), Convert.ToString(dataReader["Nom"]), Convert.ToString(dataReader["Prenom"]), Convert.ToString(dataReader["Mail"]), Convert.ToString(dataReader["Tel"]));
+                    dbProspect.Add(prospect);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                await sqlConnection.CloseAsync();
+                sqlConnection.Dispose();
+            }
+
+            return dbProspect;
+        }
+
+        /*public static async void InsertUtilisateur(Utilisateur utilisateur)
+        {
+            string query = string.Format("insert into utilisateur (NumRole, Nom, Prenom, Mdp, Mail, Tel, Adresse, CP, Ville, Pseudo) values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}')", utilisateur.NumRole, utilisateur.Nom, utilisateur.Prenom, utilisateur.Mdp, utilisateur.Mail, utilisateur.Tel, utilisateur.Adresse, utilisateur.CP, utilisateur.Ville, utilisateur.Pseudo);
+            MySqlConnection sqlConnection = dbInit();
+
+            try
+            {
+                // Ouverture de la connexion
+                await sqlConnection.OpenAsync();
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, sqlConnection);
+
+                await sqlCommand.ExecuteNonQueryAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                await sqlConnection.CloseAsync();
+                sqlConnection.Dispose();
+            }
+        }
+
+        public static async void UpdateUtilisateur(Utilisateur utilisateur)
+        {
+            string query = string.Format("update utilisateur set NumRole='{0}', Nom='{1}', Prenom='{2}', Mdp='{3}', Mail='{4}', Tel='{5}', Adresse='{6}', CP='{7}', Ville='{8}', Pseudo='{9}' where IdUti={10}", utilisateur.NumRole, utilisateur.Nom, utilisateur.Prenom, utilisateur.Mdp, utilisateur.Mail, utilisateur.Tel, utilisateur.Adresse, utilisateur.CP, utilisateur.Ville, utilisateur.Pseudo, utilisateur.IdUti);
+            MySqlConnection sqlConnection = dbInit();
+
+            try
+            {
+                // Ouverture de la connexion
+                await sqlConnection.OpenAsync();
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, sqlConnection);
+
+                await sqlCommand.ExecuteNonQueryAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                await sqlConnection.CloseAsync();
+                sqlConnection.Dispose();
+            }
+        }
+
+        public static async void DeleteUtilisateur(int id)
+        {
+            string query = string.Format("delete from utilisateur where IdUti={0}", id);
+            MySqlConnection sqlConnection = dbInit();
+
+            try
+            {
+                // Ouverture de la connexion
+                await sqlConnection.OpenAsync();
+
+                MySqlCommand sqlCommand = new MySqlCommand(query, sqlConnection);
+
+                await sqlCommand.ExecuteNonQueryAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+
+            {
+                await sqlConnection.CloseAsync();
+                sqlConnection.Dispose();
+            }
+        }*/
         #endregion
 
         #region Role
